@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More</title>
+    <link rel="stylesheet" href="dahafazla.css">
+</head>
+<body>
+    <!-- Header (Aligned with anasayfa.html) -->
+    <div class="header">
+        <div class="menu">
+            <a href="blog ana sayfa .html"><button>Home</button></a>
+            <a href="hakkımızda.html"><button>About Us</button></a>
+            <a href="iletişim.html"><button>Contact</button></a>
+            <a href="#" id="bloggerOlLink"><button>Become a Blogger</button></a>
+            <a href="platformlar.html"><button>The Top List</button></a>
+            <a href="daha fazla .html"><button>More</button></a>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <img src="foto/platform görseli3 gpt.webp" alt="Background Image" class="background-image">
+
+    <!-- More Section (Styled with 6 items in pairs) -->
+    <div class="platforms-container">
+        <h1>Explore More</h1>
+        <div class="platforms-grid">
+            <div class="platform-item">
+                <a href="must-watch-series.html"><button>Must-Watch Series</button></a>
+                <p>Unmissable TV shows packed with drama, action, and intrigue.</p>
+            </div>
+            <div class="platform-item">
+                <a href="book-recommendations.html"><button>Book Picks</button></a>
+                <p>Handpicked reads for every mood, from thrillers to romance.</p>
+            </div>
+            <div class="platform-item">
+                <a href="trivia.html"><button>Trivia & Fun</button></a>
+                <p>Test your knowledge with fun facts and cinematic trivia.</p>
+            </div>
+            <div class="platform-item">
+                <a href="hidden-gems.html"><button>Hidden Gems</button></a>
+                <p>Underrated movies and series waiting to be discovered.</p>
+            </div>
+            <div class="platform-item">
+                <a href="fan-favorites.html"><button>Fan Favorites</button></a>
+                <p>Top picks loved by fans across genres and platforms.</p>
+            </div>
+            <div class="platform-item">
+                <a href="anime.html"><button>Anime</button></a>
+                <p>Iconic animated series from Japan, full of adventure and emotion.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // "Become a Blogger" button logic
+        document.getElementById("bloggerOlLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            const isRegistered = localStorage.getItem("isRegistered");
+
+            if (!isRegistered) {
+                window.location.href = "blog1.html";
+            } else {
+                window.location.href = "blog yazma yeri.html";
+            }
+        });
+
+        // Registration check
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("registered") === "true") {
+            localStorage.setItem("isRegistered", "true");
+            window.location.href = "blog yazma yeri.html";
+        }
+    </script>
+</body>
+</html>

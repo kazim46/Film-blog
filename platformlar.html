@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Lists</title>
+    <link rel="stylesheet" href="the top list platform.css">
+</head>
+<body>
+    <!-- Üst Kenarlık (Header) -->
+    <div class="header">
+        <div class="menu">
+            <a href="blog ana sayfa .html"><button>Home</button></a>
+            <a href="hakkımızda.html"><button>About Us</button></a>
+            <a href="iletişim.html"><button>Contact</button></a>
+            <a href="#" id="bloggerOlLink"><button>Become a Blogger</button></a>
+            <a href="platformlar.html"><button>The Top List</button></a>
+            <a href="daha fazla .html"><button>More</button></a>
+        </div>
+    </div>
+
+    <!-- Arka plan resmi -->
+    <img src="foto/platform görseli2 gpt.webp" alt="Background Image" class="background-image">
+
+    <!-- Top Lists Section -->
+    <div class="platforms-container">
+        <h1>Top Lists</h1>
+        <div class="platforms-grid">
+            <div class="platform-item">
+                <a href="top-100-movies.html"><button>Top 100 Movies</button></a>
+                <p>Discover the greatest films of all time, from timeless classics to modern blockbusters.</p>
+            </div>
+            <div class="platform-item">
+                <a href="top-50-series.html"><button>anime</button></a>
+                <p>Binge-worthy TV shows that have captivated audiences worldwide.</p>
+            </div>
+            <div class="platform-item">
+                <a href="best-turkish-cinema.html"><button>Best of Turkish Cinema</button></a>
+                <p>Iconic Turkish films that define the nation’s cinematic legacy.</p>
+            </div>
+            <div class="platform-item">
+                <a href="top-animated-films.html"><button>Top Animated Films</button></a>
+                <p>Heartwarming and visually stunning animations for all ages.</p>
+            </div>
+            <div class="platform-item">
+                <a href="best-sci-fi.html"><button>Best Sci-Fi Films</button></a>
+                <p>Explore futuristic worlds and mind-bending stories in science fiction.</p>
+            </div>
+            <div class="platform-item">
+                <a href="top-horror-movies.html"><button>Top Horror Movies</button></a>
+                <p>Spine-chilling tales that will keep you up at night.</p>
+            </div>
+            <div class="platform-item">
+                <a href="best-romance.html"><button>Best Romance films</button></a>
+                <p>Love stories that tug at the heartstrings and inspire.</p>
+            </div>
+            <div class="platform-item">
+                <a href="top-action-films.html"><button>Top Action Films</button></a>
+                <p>High-octane thrills and explosive adventures you can’t miss.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // "Become a Blogger" butonuna tıklama olayını kontrol et
+        document.getElementById("bloggerOlLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            const isRegistered = localStorage.getItem("isRegistered");
+
+            if (!isRegistered) {
+                window.location.href = "blog1.html";
+            } else {
+                window.location.href = "blog yazma yeri.html";
+            }
+        });
+
+        // Kayıt sayfasından dönüldüğünde kontrol
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("registered") === "true") {
+            localStorage.setItem("isRegistered", "true");
+            window.location.href = "blog yazma yeri.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merhaba</title>
+    <link rel="stylesheet" href="blog css dosya1.css">
+</head>
+<body>
+    <img src="foto/sinema.jpg" height="650" width="1700" alt="background" title="background image">
+    <div class="container">
+        <!-- Dil seçimi dropdown -->
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="tr">Türkçe</option>
+            <option value="en" selected>English</option>
+            <option value="ar">العربية</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="ru">Русский</option>
+        </select>
+
+        <form id="subscription-form" action="">
+            <label for="name" id="label-name">Name:</label>
+            <input type="text" name="isim" id="name" placeholder="Please enter your name">
+            <label for="lastname" id="label-lastname">Last Name:</label>
+            <input type="text" name="soyisim" id="lastname" placeholder="Please enter your last name">
+            <label for="password" id="label-password">Password:</label>
+            <input type="password" name="sifre" id="password" placeholder="**********" maxlength="15">
+            <label for="email" id="label-email">E-mail:</label>
+            <input type="email" name="eposta" id="email" placeholder="example@mail.com">
+            <label for="phone" id="label-phone">Phone:</label>
+            <input type="tel" name="telefon" id="phone" placeholder="555-555-5555" maxlength="15">
+            <label for="birthdate" id="label-birthdate">Birth Date:</label>
+            <input type="date" name="tarih" id="birthdate">
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const translations = {
+            tr: {
+                name: "İsim:",
+                lastname: "Soyisim:",
+                password: "Şifre:",
+                email: "E-posta:",
+                phone: "Telefon:",
+                birthdate: "Doğum Tarihi:",
+                submit: "Gönder",
+                placeholder_name: "Lütfen isminizi girin",
+                placeholder_lastname: "Lütfen soyisminizi girin",
+                placeholder_password: "**********",
+                placeholder_email: "ornek@mail.com",
+                placeholder_phone: "555-555-5555"
+            },
+            en: {
+                name: "Name:",
+                lastname: "Last Name:",
+                password: "Password:",
+                email: "E-mail:",
+                phone: "Phone:",
+                birthdate: "Birth Date:",
+                submit: "Submit",
+                placeholder_name: "Please enter your name",
+                placeholder_lastname: "Please enter your last name",
+                placeholder_password: "**********",
+                placeholder_email: "example@mail.com",
+                placeholder_phone: "555-555-5555"
+            },
+            ar: {
+                name: "الاسم:",
+                lastname: "اللقب:",
+                password: "كلمة المرور:",
+                email: "البريد الإلكتروني:",
+                phone: "الهاتف:",
+                birthdate: "تاريخ الميلاد:",
+                submit: "إرسال",
+                placeholder_name: "يرجى إدخال اسمك",
+                placeholder_lastname: "يرجى إدخال لقبك",
+                placeholder_password: "**********",
+                placeholder_email: "example@mail.com",
+                placeholder_phone: "555-555-5555"
+            },
+            de: {
+                name: "Name:",
+                lastname: "Nachname:",
+                password: "Passwort:",
+                email: "E-Mail:",
+                phone: "Telefon:",
+                birthdate: "Geburtsdatum:",
+                submit: "Absenden",
+                placeholder_name: "Bitte geben Sie Ihren Namen ein",
+                placeholder_lastname: "Bitte geben Sie Ihren Nachnamen ein",
+                placeholder_password: "**********",
+                placeholder_email: "beispiel@mail.com",
+                placeholder_phone: "555-555-5555"
+            },
+            es: {
+                name: "Nombre:",
+                lastname: "Apellido:",
+                password: "Contraseña:",
+                email: "Correo electrónico:",
+                phone: "Teléfono:",
+                birthdate: "Fecha de nacimiento:",
+                submit: "Enviar",
+                placeholder_name: "Por favor, introduce tu nombre",
+                placeholder_lastname: "Por favor, introduce tu apellido",
+                placeholder_password: "**********",
+                placeholder_email: "ejemplo@mail.com",
+                placeholder_phone: "555-555-5555"
+            },
+            fr: {
+                name: "Nom:",
+                lastname: "Nom de famille:",
+                password: "Mot de passe:",
+                email: "E-mail:",
+                phone: "Téléphone:",
+                birthdate: "Date de naissance:",
+                submit: "Soumettre",
+                placeholder_name: "Veuillez entrer votre nom",
+                placeholder_lastname: "Veuillez entrer votre nom de famille",
+                placeholder_password: "**********",
+                placeholder_email: "exemple@mail.com",
+                placeholder_phone: "555-555-5555"
+            },
+            ru: {
+                name: "Имя:",
+                lastname: "Фамилия:",
+                password: "Пароль:",
+                email: "Электронная почта:",
+                phone: "Телефон:",
+                birthdate: "Дата рождения:",
+                submit: "Отправить",
+                placeholder_name: "Пожалуйста, введите ваше имя",
+                placeholder_lastname: "Пожалуйста, введите вашу фамилию",
+                placeholder_password: "**********",
+                placeholder_email: "primer@mail.com",
+                placeholder_phone: "555-555-5555"
+            }
+        };
+
+        function changeLanguage() {
+            const selectedLang = document.getElementById("language-select").value;
+
+            document.getElementById("label-name").textContent = translations[selectedLang].name;
+            document.getElementById("label-lastname").textContent = translations[selectedLang].lastname;
+            document.getElementById("label-password").textContent = translations[selectedLang].password;
+            document.getElementById("label-email").textContent = translations[selectedLang].email;
+            document.getElementById("label-phone").textContent = translations[selectedLang].phone;
+            document.getElementById("label-birthdate").textContent = translations[selectedLang].birthdate;
+            document.getElementById("submit-button").textContent = translations[selectedLang].submit;
+
+            document.getElementById("name").placeholder = translations[selectedLang].placeholder_name;
+            document.getElementById("lastname").placeholder = translations[selectedLang].placeholder_lastname;
+            document.getElementById("password").placeholder = translations[selectedLang].placeholder_password;
+            document.getElementById("email").placeholder = translations[selectedLang].placeholder_email;
+            document.getElementById("phone").placeholder = translations[selectedLang].placeholder_phone;
+        }
+
+        // Sayfa yüklendiğinde varsayılan dili uygula
+        window.onload = changeLanguage;
+    </script>
+</body>
+</html

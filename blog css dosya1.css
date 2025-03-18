@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Arka plan görseli (sinema.jpg) */
+  img[alt="background"] {
+    width: 100%;           /* Ekran genişliğine uyum sağlasın */
+    height: 100vh;         /* Ekran yüksekliğini kapsasın */
+    object-fit: cover;     /* Görseli oranlı şekilde doldur */
+    position: absolute;    /* Arka plana sabitle */
+    top: 0;
+    left: 0;
+    z-index: -1;           /* Formun altına yerleştir */
+  }
+  
+  /* Container ve form hizalaması */
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Dikey hizalama için */
+    justify-content: center; /* Dikeyde ortala */
+    align-items: center;     /* Yatayda ortala */
+    height: 100vh;           /* Tüm ekranı kaplasın */
+  }
+  
+  /* Form stilleri */
+  #subscription-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Şeffaf beyaz arka plan */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+    width: 300px;           /* Form genişliği */
+    z-index: 1;             /* Form arka planın üstünde */
+  }
+  
+  /* Etiket ve inputlar */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Buton */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Yeşil renk */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Hover efekti */
+  }
